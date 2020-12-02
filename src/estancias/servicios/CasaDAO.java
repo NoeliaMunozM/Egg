@@ -9,7 +9,7 @@ public class CasaDAO extends Conexion {
     public List<Casas> listarCasas() throws Exception {
         try {
             //Armo el sql
-            String sql = "SELECT id_casa, calle, numero, codigo_postal"
+            String sql = "SELECT id_casa, calle, numero, codigo_postal, ciudad"
                     + "  FROM casas ";
        
             //Consulto la base de datos
@@ -23,6 +23,7 @@ public class CasaDAO extends Conexion {
                 casa.setCalle(resultado.getString(2));
                 casa.setNumero(resultado.getInt(3));
                 casa.setCodigo_postal(resultado.getString(4));
+                casa.setCiudad(resultado.getString(5));
                 casas.add(casa);
             }
             return casas;
